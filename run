@@ -1,0 +1,10 @@
+#!/bin/bash
+
+podman run \
+    --name dev \
+    -d -ti \
+    -v ~/.gitconfig:/home/developer/.gitconfig \
+    my-development-environment:latest \
+    zsh
+
+podman exec -ti dev zsh
