@@ -87,6 +87,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f $HOME/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ ! -f $HOME/.zfunc ] && mkdir $HOME/.zfunc 
+[ ! -d $HOME/.zfunc ] && mkdir $HOME/.zfunc 
 [ ! -f $HOME/.zfunc/_rustup ] && rustup completions zsh > $HOME/.zfunc/_rustup 
 [ ! -f $HOME/.zfunc/_cargo ] && rustup completions zsh cargo > $HOME/.zfunc/_cargo 
