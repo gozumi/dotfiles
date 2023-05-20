@@ -23,11 +23,13 @@ RUN cd /home/${USERNAME}/git-downloads && \
 
 RUN git clone https://github.com/marlonrichert/zsh-autocomplete.git /home/${USERNAME}/git-downloads/zsh-autocomplete
 
-RUN mkdir -p /home/${USERNAME}/.local/bin
+RUN mkdir -p /home/${USERNAME}/.local/bin && \
+    mkdir -p /home/${USERNAME}/.config/nvim
 
 COPY .zshrc /home/${USERNAME}/.zshrc
 COPY git-prompt.sh /home/${USERNAME}/git-prompt.sh
 COPY .tmux.conf /home/${USERNAME}/.tmux.conf
+COPY neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
 
 RUN ln -s /home/${USERNAME}/git-downloads/nvim-linux64/bin/nvim /home/${USERNAME}/.local/bin/nvim
 
