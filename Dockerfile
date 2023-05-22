@@ -3,7 +3,7 @@ FROM ubuntu:lunar
 RUN apt-get update
 
 RUN apt-get install \
-    bat git zsh curl tmux \
+    bat git zsh curl tmux gcc make \
     -y 
 ARG USERNAME=developer
 
