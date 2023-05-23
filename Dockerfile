@@ -3,11 +3,13 @@ FROM ubuntu:lunar
 RUN apt-get update
 
 RUN apt-get install \
-    bat git zsh curl tmux gcc make \
+    bat git zsh curl tmux gcc make sudo \
     -y 
 ARG USERNAME=developer
 
 RUN adduser ${USERNAME}
+
+RUN echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 RUN chsh -s $(which zsh)
 
