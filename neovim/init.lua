@@ -18,7 +18,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "folke/tokyonight.nvim",
   "nvim-lualine/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
   "nvim-treesitter/nvim-treesitter",
@@ -49,7 +48,7 @@ require('indent_blankline').setup({
   char = '_',
   show_trailing_blankline_indent = false,
   show_first_indent_level = false,
-  use_treesitter = true,developer
+  use_treesitter = true,
   show_current_context = true 
 })
 
