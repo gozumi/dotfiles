@@ -27,6 +27,7 @@ require("lazy").setup({
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = false },
+  "akinsho/toggleterm.nvim"
 })
 
 -- vim.cmd('colorscheme tokyonight')
@@ -116,4 +117,17 @@ vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 
 require('telescope').load_extension('fzf')
+
+require('toggleterm').setup({
+  size = function(term)
+    if term.direction == "horizontal" then
+      return 15
+    elseif term.direction == "vertical" then
+      return vim.o.columns * 0.4
+    end
+  end,
+  open_mapping = '<C-g>',
+  direction = 'vertical',
+  shade_terminals = true
+})
 
