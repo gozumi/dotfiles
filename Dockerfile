@@ -3,7 +3,7 @@ FROM ubuntu:lunar
 RUN apt-get update
 
 RUN apt-get install \
-    bat git zsh curl tmux gcc make sudo \
+    bat git zsh curl tmux gcc make sudo fzf bc \
     -y 
 ARG USERNAME=developer
 
@@ -24,6 +24,8 @@ RUN cd /home/${USERNAME}/git-downloads && \
     tar xzvf nvim-linux64.tar.gz
 
 RUN git clone https://github.com/marlonrichert/zsh-autocomplete.git /home/${USERNAME}/git-downloads/zsh-autocomplete
+RUN git clone https://github.com/wfxr/forgit.git /home/${USERNAME}/git-downloads/forgit
+RUN git clone https://github.com/bigH/git-fuzzy.git /home/${USERNAME}/git-downloads/git-fuzzy
 
 RUN mkdir -p /home/${USERNAME}/.local/bin && \
     mkdir -p /home/${USERNAME}/.config/nvim

@@ -79,7 +79,7 @@ alias l="ls -al"
 
 source $HOME/git-downloads/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/git-downloads/git-fuzzy/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -89,4 +89,7 @@ export NVM_DIR="$HOME/.nvm"
 
 [ ! -d $HOME/.zfunc ] && mkdir $HOME/.zfunc 
 [ ! -f $HOME/.zfunc/_rustup ] && rustup completions zsh > $HOME/.zfunc/_rustup 
-[ ! -f $HOME/.zfunc/_cargo ] && rustup completions zsh cargo > $HOME/.zfunc/_cargo 
+[ ! -f $HOME/.zfunc/_cargo ] && rustup completions zsh cargo > $HOME/.zfunc/_cargo
+
+[ -s $HOME/git-downloads/forgit/forgit.plugin.zsh ] && source $HOME/git-downloads/forgit/forgit.plugin.zsh
+
