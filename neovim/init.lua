@@ -27,7 +27,8 @@ require("lazy").setup({
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = false },
-  "akinsho/toggleterm.nvim"
+  "akinsho/toggleterm.nvim",
+  { 'junegunn/fzf', run = './install --bin' }
 })
 
 -- vim.cmd('colorscheme tokyonight')
