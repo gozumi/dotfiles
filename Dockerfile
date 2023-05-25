@@ -1,6 +1,6 @@
 FROM ubuntu:lunar
 
-ENV TZ="Europe/London"
+ENV TZ="Europe/London (BST, +0100)"
 
 RUN apt-get update
 
