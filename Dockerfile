@@ -36,9 +36,9 @@ RUN git clone https://github.com/bigH/git-fuzzy.git /home/${USERNAME}/git-downlo
 RUN mkdir -p /home/${USERNAME}/.local/bin && \
     mkdir -p /home/${USERNAME}/.config/nvim
 
-COPY .zshrc /home/${USERNAME}/.zshrc
-COPY git-prompt.sh /home/${USERNAME}/git-prompt.sh
-COPY .tmux.conf /home/${USERNAME}/.tmux.conf
+COPY --chown=${USERNAME}:${USERNAME} .zshrc /home/${USERNAME}/.zshrc
+COPY --chown=${USERNAME}:${USERNAME} git-prompt.sh /home/${USERNAME}/git-prompt.sh
+COPY --chown=${USERNAME}:${USERNAME} .tmux.conf /home/${USERNAME}/.tmux.conf
 COPY neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
 
 RUN ln -s /home/${USERNAME}/git-downloads/nvim-linux64/bin/nvim /home/${USERNAME}/.local/bin/nvim
