@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt-get install \
     bat git zsh curl tmux gcc make sudo fzf bc \
     -y 
+
 ARG USERNAME=developer
 
 RUN adduser ${USERNAME}
@@ -22,6 +23,8 @@ RUN mkdir /home/${USERNAME}/git-downloads
 RUN cd /home/${USERNAME}/git-downloads && \
     curl -LO https://github.com/neovim/neovim/releases/download/v0.9.0/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz
+
+RUN cargo install git-delta
 
 RUN git clone https://github.com/marlonrichert/zsh-autocomplete.git /home/${USERNAME}/git-downloads/zsh-autocomplete
 RUN git clone https://github.com/wfxr/forgit.git /home/${USERNAME}/git-downloads/forgit
