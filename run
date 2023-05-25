@@ -3,7 +3,7 @@
 podman run \
     --name dev \
     -d -ti \
-    --volume ~/.gitconfig:/home/developer/.gitconfig \
+    --volume ~/.gitconfig:/home/developer/.gitconfig:U \
     --volume .ssh:/home/developer/.ssh:U \
     --hostname devcontainer \
     my-development-environment:latest \
