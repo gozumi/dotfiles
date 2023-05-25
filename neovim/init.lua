@@ -30,7 +30,7 @@ require("lazy").setup({
   "akinsho/toggleterm.nvim",
   { "junegunn/fzf", run = "./install --bin" },
   "tpope/vim-fugitive",
-  "{'ray-x/guihua.lua', run = 'cd lua/fzy && make'}",
+  { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
   "ray-x/forgit.nvim"
 })
 
