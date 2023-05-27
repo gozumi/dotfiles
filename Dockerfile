@@ -41,9 +41,6 @@ COPY --chown=${USERNAME}:${USERNAME} git-prompt.sh /home/${USERNAME}/git-prompt.
 COPY --chown=${USERNAME}:${USERNAME} .tmux.conf /home/${USERNAME}/.tmux.conf
 COPY --chown=${USERNAME}:${USERNAME} neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
 
-RUN curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-RUN +x ~/.local/bin/rust-analyzer
-
 RUN ln -s /home/${USERNAME}/git-downloads/nvim-linux64/bin/nvim /home/${USERNAME}/.local/bin/nvim
 
 WORKDIR /home/${USERNAME}
