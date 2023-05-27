@@ -39,7 +39,7 @@ RUN mkdir -p /home/${USERNAME}/.local/bin && \
 COPY --chown=${USERNAME}:${USERNAME} .zshrc /home/${USERNAME}/.zshrc
 COPY --chown=${USERNAME}:${USERNAME} git-prompt.sh /home/${USERNAME}/git-prompt.sh
 COPY --chown=${USERNAME}:${USERNAME} .tmux.conf /home/${USERNAME}/.tmux.conf
-COPY neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
+COPY --chown=${USERNAME}:${USERNAME} neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
 
 RUN ln -s /home/${USERNAME}/git-downloads/nvim-linux64/bin/nvim /home/${USERNAME}/.local/bin/nvim
 

@@ -32,7 +32,8 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
   "ray-x/forgit.nvim",
-{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+  "nvim-tree/nvim-web-devicons"
 })
 
 -- vim.cmd('colorscheme tokyonight')
