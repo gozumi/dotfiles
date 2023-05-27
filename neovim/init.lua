@@ -18,6 +18,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "neovim/nvim-lspconfig",
   "nvim-lualine/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
   "nvim-treesitter/nvim-treesitter",
