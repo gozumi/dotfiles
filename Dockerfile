@@ -5,7 +5,7 @@ ENV TZ="BST"
 RUN apt-get update
 
 RUN apt-get install \
-    bat git zsh curl tmux gcc make sudo fzf bc fd-find ripgrep \
+    bat git zsh curl tmux gcc cmake make sudo fzf bc fd-find ripgrep \
     -y 
 
 ARG USERNAME=developer
