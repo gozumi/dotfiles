@@ -10,7 +10,7 @@ setopt autocd
 # set up git prompt
 autoload -Uz add-zsh-hook vcs_info
 
-source ~/git-prompt.sh
+source ~/git-downloads/git-prompt.sh
 
 function precmd () {
   add-zsh-hook precmd vcs_info
