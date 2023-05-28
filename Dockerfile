@@ -34,12 +34,14 @@ RUN git clone https://github.com/wfxr/forgit.git /home/${USERNAME}/git-downloads
 RUN git clone https://github.com/bigH/git-fuzzy.git /home/${USERNAME}/git-downloads/git-fuzzy
 
 RUN mkdir -p /home/${USERNAME}/.local/bin && \
-    mkdir -p /home/${USERNAME}/.config/nvim
+    mkdir -p /home/${USERNAME}/.config/nvim && \
+    mkdir -p /home/${USERNAME}/.local/share/fonts
 
 COPY --chown=${USERNAME}:${USERNAME} .zshrc /home/${USERNAME}/.zshrc
 COPY --chown=${USERNAME}:${USERNAME} git-prompt.sh /home/${USERNAME}/git-downloads/git-prompt.sh
 COPY --chown=${USERNAME}:${USERNAME} .tmux.conf /home/${USERNAME}/.tmux.conf
 COPY --chown=${USERNAME}:${USERNAME} neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
+COPY --chown=${USERNAME}:${USERNAME} fonts/MonoidNerdFontMono-Retina.ttf /home/${USERNAME}/.local/shares/fonts/MonoidNerdFontMono-Retina.ttf
 
 RUN ln -s /home/${USERNAME}/git-downloads/nvim-linux64/bin/nvim /home/${USERNAME}/.local/bin/nvim
 
