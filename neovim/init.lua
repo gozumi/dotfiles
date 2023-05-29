@@ -19,6 +19,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "folke/tokyonight.nvim",
   "neovim/nvim-lspconfig",
   "nvim-lualine/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
@@ -39,7 +40,11 @@ require("lazy").setup({
   "lewis6991/gitsigns.nvim"
 })
 
--- vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme tokyonight')
+
+require("tokyonight").setup({
+  transparent = true,
+})
 
 vim.opt.showmode = false
 
