@@ -1,4 +1,3 @@
-# fpath=(~/.zsh $fpath)
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
 # fpath=(~/.zsh/completion $fpath)
@@ -79,6 +78,8 @@ alias l="ls -al"
 
 source $HOME/git-downloads/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
 export PATH=$HOME/.local/bin:$HOME/git-downloads/git-fuzzy/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
