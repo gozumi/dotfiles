@@ -1,6 +1,7 @@
 vim.wo.relativenumber = true
 vim.wo.number = true 
-
+vim.opt.shell = "/bin/zsh"
+ 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
