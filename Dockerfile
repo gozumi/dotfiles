@@ -23,7 +23,6 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -sSf | sh -s -- -y
 RUN mkdir /home/${USERNAME}/git-downloads && \
     mkdir -p /home/${USERNAME}/.local/bin && \
     mkdir -p /home/${USERNAME}/.config/nvim && \
-    mkdir -p /home/${USERNAME}/.local/share/fonts && \
     mkdir -p /home/${USERNAME}/.tmux/plugins
 
 RUN cd /home/${USERNAME}/git-downloads && \
@@ -42,7 +41,6 @@ COPY --chown=${USERNAME}:${USERNAME} .zshrc /home/${USERNAME}/.zshrc
 COPY --chown=${USERNAME}:${USERNAME} git-prompt.sh /home/${USERNAME}/git-downloads/git-prompt.sh
 COPY --chown=${USERNAME}:${USERNAME} .tmux.conf /home/${USERNAME}/.tmux.conf
 COPY --chown=${USERNAME}:${USERNAME} neovim/init.lua /home/${USERNAME}/.config/nvim/init.lua
-COPY --chown=${USERNAME}:${USERNAME} fonts/MonoidNerdFontMono-Retina.ttf /home/${USERNAME}/.local/shares/fonts/MonoidNerdFontMono-Retina.ttf
 
 RUN ln -s /home/${USERNAME}/git-downloads/nvim-linux64/bin/nvim /home/${USERNAME}/.local/bin/nvim
 
