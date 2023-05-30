@@ -75,6 +75,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias bat=batcat
 alias ls="ls --color=auto"
 alias l="ls -al"
+alias tmux="tmux -2"
 
 source $HOME/git-downloads/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
