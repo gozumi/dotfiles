@@ -1,9 +1,14 @@
 vim.wo.relativenumber = true
 vim.wo.number = true 
 vim.opt.shell = "/bin/zsh"
- 
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
+vim.g.accent_colour = "yellow"
+vim.g.accent_invert_status = 1
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -19,7 +24,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "folke/tokyonight.nvim",
+-- "folke/tokyonight.nvim",
+  "alligator/accent.vim",
   "neovim/nvim-lspconfig",
   "nvim-lualine/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
@@ -40,11 +46,12 @@ require("lazy").setup({
   "lewis6991/gitsigns.nvim"
 })
 
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme accent')
+-- vim.cmd('colorscheme tokyonight')
 
-require("tokyonight").setup({
-  transparent = true,
-})
+-- require("tokyonight").setup({
+--  transparent = true,
+-- })
 
 vim.opt.showmode = false
 
@@ -206,6 +213,34 @@ require('gitsigns').setup({
     delete = {text = '➤'},
     topdelete = {text = '➤'},
     changedelete = {text = '▎'},
-  }
+  },
+
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Actions
+    map('n', '<leader>hs', gs.stage_hunk)
+    map('n', '<leader>hr', gs.reset_hunk)
+    map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end)
+    map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end)
+    map('n', '<leader>hS', gs.stage_buffer)
+    map('n', '<leader>hu', gs.undo_stage_hunk)
+    map('n', '<leader>hR', gs.reset_buffer)
+    map('n', '<leader>hp', gs.preview_hunk)
+    map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+    map('n', '<leader>tb', gs.toggle_current_line_blame)
+    map('n', '<leader>hd', gs.diffthis)
+    map('n', '<leader>hD', function() gs.diffthis('~') end)
+    map('n', '<leader>td', gs.toggle_deleted)
+
+    -- Text object
+    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+end
 })
 
