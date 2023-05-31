@@ -2,14 +2,10 @@ FROM ubuntu:lunar
 
 ENV TZ="BST"
 
-RUN apt-get update && \
-    apt-get install -y software-properties-common
-
-RUN add-apt-repository universe
 RUN apt-get update
 
 RUN apt-get install \
-    bat git zsh curl tmux gcc cmake make sudo fzf bc fd-find ripgrep powerline \
+    bat git zsh curl tmux gcc cmake make sudo fzf bc fd-find ripgrep \
     -y 
 
 ARG USERNAME=developer

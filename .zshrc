@@ -95,9 +95,3 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s $HOME/git-downloads/forgit/forgit.plugin.zsh ] && source $HOME/git-downloads/forgit/forgit.plugin.zsh
 
-# Powerline configuration
-if [ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]; then
-  echo "Running powerline!"
-  . /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
-
