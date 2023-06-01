@@ -1,7 +1,7 @@
 #!/bin/bash
 
 podman run \
-    --name dev \
+    --name devcontainer \
     -d -ti \
     --volume ~/.gitconfig:/home/developer/.gitconfig:U \
     --volume .ssh:/home/developer/.ssh:U \
@@ -9,4 +9,4 @@ podman run \
     my-development-environment:latest \
     zsh
 
-podman exec -ti dev zsh
+podman exec -ti devcontainer zsh
