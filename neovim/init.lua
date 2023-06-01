@@ -32,7 +32,6 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter",
   "nvim-treesitter/nvim-treesitter-textobjects",
   "numToStr/Comment.nvim",
-  "kyazdani42/nvim-tree.lua",
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = false },
@@ -42,6 +41,7 @@ require("lazy").setup({
   { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
   "ray-x/forgit.nvim",
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+  "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "lewis6991/gitsigns.nvim"
 })
