@@ -319,7 +319,24 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-  rust_analyzer = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true
+      },
+    }
+  },
   tsserver = {},
 
   lua_ls = {
