@@ -20,6 +20,8 @@ USER ${USERNAME}
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -sSf | sh -s -- -y
 
+RUN rustup component add rust-analyzer
+
 RUN mkdir /home/${USERNAME}/git-downloads && \
     mkdir -p /home/${USERNAME}/.local/bin && \
     mkdir -p /home/${USERNAME}/.config/nvim && \
