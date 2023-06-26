@@ -1,6 +1,6 @@
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 
-# fpath=(~/.zsh/completion $fpath)
+fpath=(~/.zsh/completion $fpath)
 
 # Set up the prompt
 
@@ -80,7 +80,7 @@ alias tmux="tmux -2"
 source $HOME/git-downloads/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 export LANG=en_GB.UTF-8
-export PATH=$HOME/.local/bin:$HOME/git-downloads/git-fuzzy/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/git-downloads/git-fuzzy/bin:$HOME/.docker/bin:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
 
 export NVM_DIR="$HOME/.nvm"

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-podman build . -t my-development-environment
+docker build . -t my-development-environment
