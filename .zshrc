@@ -83,6 +83,7 @@ export LANG=en_GB.UTF-8
 export PATH=$HOME/.local/bin:$HOME/git-downloads/git-fuzzy/bin:$HOME/.docker/bin:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
 export PICO_SDK_PATH=$HOME/pico/pico-sdk
+export GOPATH=$HOME/go
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
