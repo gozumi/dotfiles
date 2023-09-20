@@ -77,6 +77,7 @@ require("lazy").setup({
     "akinsho/toggleterm.nvim",
     version = '*', 
   },
+  "lewis6991/gitsigns.nvim",
 })
 
 -- colour scheme
@@ -126,12 +127,11 @@ require('lualine').setup({
 })
 
 -- indent blank line
+-- vim.opt.list = true
+-- vim.opt.listchars:append "eol:↴"
+
 require("indent_blankline").setup {
-  char = '_',
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
-  use_treesitter = true,
-  show_current_context = true
+    show_end_of_line = true,
 }
 
 -- tree sitter
@@ -201,6 +201,45 @@ require('toggleterm').setup({
   open_mapping = '<C-g>',
   direction = 'vertical',
   shade_terminals = true
+})
+
+-- git signs
+require('gitsigns').setup({
+  signs = {
+    add = {text = '▎'},
+    change = {text = '▎'},
+    delete = {text = '➤'},
+    topdelete = {text = '➤'},
+    changedelete = {text = '▎'},
+  },
+
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Actions
+    map('n', '<leader>hs', gs.stage_hunk)
+    map('n', '<leader>hr', gs.reset_hunk)
+    map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end)
+    map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end)
+    map('n', '<leader>hS', gs.stage_buffer)
+    map('n', '<leader>hu', gs.undo_stage_hunk)
+    map('n', '<leader>hR', gs.reset_buffer)
+    map('n', '<leader>hp', gs.preview_hunk_inline)
+    map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+    map('n', '<leader>tb', gs.toggle_current_line_blame)
+    map('n', '<leader>hd', gs.diffthis)
+    map('n', '<leader>hD', function() gs.diffthis('~') end)
+    map('n', '<leader>td', gs.toggle_deleted)
+
+    -- Text object
+    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+  end
 })
 
 -- key mappings
