@@ -81,7 +81,8 @@ require("lazy").setup({
     },
     {
         "nvim-telescope/telescope-fzf-native.nvim",
-        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        build =
+        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
     },
     {
         "akinsho/toggleterm.nvim",
@@ -257,6 +258,19 @@ require("gitsigns").setup({
             vim.keymap.set(mode, l, r, opts)
         end
 
+        -- Navigation
+        map('n', ']c', function()
+            if vim.wo.diff then return ']c' end
+            vim.schedule(function() gs.next_hunk() end)
+            return '<Ignore>'
+        end, { expr = true })
+
+        map('n', '[c', function()
+            if vim.wo.diff then return '[c' end
+            vim.schedule(function() gs.prev_hunk() end)
+            return '<Ignore>'
+        end, { expr = true })
+
         -- Actions
         map("n", "<leader>hs", gs.stage_hunk)
         map("n", "<leader>hr", gs.reset_hunk)
@@ -288,7 +302,7 @@ require("gitsigns").setup({
 -- Setup language servers.
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
-lspconfig.lua_ls.setup{
+lspconfig.lua_ls.setup {
     settings = {
         Lua = {
             diagnostics = {
