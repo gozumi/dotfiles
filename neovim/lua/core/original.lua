@@ -1,7 +1,3 @@
--- telescope
-require("telescope").setup({})
-require("telescope").load_extension("fzf")
-
 -- toggleterm
 require("toggleterm").setup({
     size = function(term)
