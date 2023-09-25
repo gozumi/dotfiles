@@ -9,7 +9,7 @@ vim.opt.cursorline = true
 vim.g.accent_colour = "yellow"
 vim.g.accent_invert_status = 1
 
--- auto lint typescript and javascript files on save
+-- autofix typescript and javascript lint issues on save
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
     command = "silent! EslintFixAll",

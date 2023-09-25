@@ -5,6 +5,7 @@ require("plugins.nvim-tree")
 require("plugins.lualine")
 require("plugins.bufferline")
 require("plugins.indent-blankline")
+require("plugins.nvim-treesitter")
 require("core.original")
 require("core.mappings")
 
