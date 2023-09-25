@@ -10,6 +10,6 @@ require("plugins.comment")
 require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.gitsigns")
-require("core.original")
+require("plugins.lsp")
 require("core.mappings")
 
