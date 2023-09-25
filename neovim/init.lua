@@ -8,6 +8,7 @@ require("plugins.indent-blankline")
 require("plugins.nvim-treesitter")
 require("plugins.comment")
 require("plugins.telescope")
+require("plugins.toggleterm")
 require("core.original")
 require("core.mappings")
 
