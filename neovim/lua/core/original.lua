@@ -1,6 +1,3 @@
--- comment
-require("Comment").setup({})
-
 -- nvim-tree
 require("nvim-tree").setup({
     git = {
