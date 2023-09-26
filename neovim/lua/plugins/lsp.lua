@@ -1,4 +1,13 @@
 -- Setup language servers.
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "lua_ls",
+        "rust_analyzer",
+        "tsserver",
+    },
+})
+
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
 lspconfig.lua_ls.setup {

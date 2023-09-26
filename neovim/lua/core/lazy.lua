@@ -76,6 +76,9 @@ require("lazy").setup({
     },
     "lewis6991/gitsigns.nvim",
     "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
     "editorconfig/editorconfig-vim",
     "tpope/vim-fugitive",
 })
