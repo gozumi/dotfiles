@@ -80,3 +80,7 @@ source $HOME/packages/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 [ ! -d $HOME/.zfunc ] && mkdir $HOME/.zfunc 
 [ ! -f $HOME/.zfunc/_rustup ] && rustup completions zsh > $HOME/.zfunc/_rustup 
 [ ! -f $HOME/.zfunc/_cargo ] && rustup completions zsh cargo > $HOME/.zfunc/_cargo
+
+[ -d $HOME/.nvm ] && export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
