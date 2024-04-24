@@ -68,7 +68,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export TZ=Europe/London
-export LANG=en_GB.UTF-8
+# export LANG=en_GB.UTF-8
+# export LANGUAGE=en_GB
 export PATH=$HOME/.local/bin:$PATH
 export HELIX_RUNTIME=$HOME/src/helix/runtime
 
