@@ -1,31 +1,27 @@
-# Author : thlsrms <thlsrmsdev@gmail.com>
-
-# Original author: kaolin-dark by Ogden Webb: github.com/ogdenwebb/emacs-kaolin-themes
-# Kaolin Dark Theme - A dark jade theme inspired by Sierra.vim : github.com/AlessandroYorba/Sierra
-
 "attribute" = "constant"
-"keyword" = { fg = "hint" }
+"keyword" = { fg = "keyword" }
 "keyword.directive" = "info"
+"keyword.function" = { fg = "keyword", modifiers = ["bold"]}
 "namespace" = "constant"
 "punctuation" = "fg0"
 "punctuation.delimiter" = "fg0"
 "operator" = "fg0"
 "special" = "constant"
-"variable.other.member" = { fg = "violet7", modifiers = ["italic"] }
-"variable" = "ultramarine4_dark"
+"variable.other.member" = { fg = "variable", modifiers = ["italic"] }
+"variable" = "variable"
 "variable.builtin" = "hint"
-"variable.parameter" = "ultramarine4_dark"
+"variable.parameter" = "variable"
 "type" = "type"
 "type.builtin" = "info"
 "constructor" = { fg = "type" }
-"function" = { fg = "info" }
+"function" = { fg = "function", modifiers = ["bold"] }
 "function.macro" = "constant"
 "function.builtin" = "selection0"
 "tag" = "#7aaaa5"
 "comment" = { fg = "gray0", modifiers = ["italic"] }
 "constant" = { fg = "constant" }
 "constant.builtin" = { fg = "info" }
-"string" = "hint"
+"string" = "literal"
 "constant.numeric" = "info"
 "constant.character.escape" = { fg = "hint", modifiers = ["bold"] }
 "label" = "constant"
@@ -52,7 +48,7 @@
 "ui.cursorline.secondary" = { bg = "bg2" }
 "ui.cursorcolumn.primary" = { bg = "bg1" }
 "ui.cursorcolumn.secondary" = { bg = "bg2" }
-"ui.statusline" = { fg = "info", bg = "bg1" }
+"ui.statusline" = { fg = "fg2", bg = "bg1" }
 "ui.statusline.normal" = { fg = "hint", bg = "bg1", modifiers = ["reversed", "bold"] }
 "ui.statusline.insert" = { fg = "green0", bg = "bg1", modifiers = ["reversed", "bold"] }
 "ui.statusline.select" = { fg = "ultramarine4_dark", bg = "bg1", modifiers = ["reversed", "bold"] }
@@ -87,23 +83,28 @@
 "markup.raw" = "selection0"
 
 [palette]
-# kaolin-dark palette
-bg0 = "#18181b" # black1
-bg1 = "#222225" # black2
+bg0 = "#171717"
+bg1 = "#222225"
 bg2 = "#303035" # black4
 fg0 = "#e6e6e8" # white1
 fg1 = "#adadb9" # whiet4
+fg2 = "#686868"
 gray0 = "#545c5e" # gray3
 gray1 = "#919a9c" # gray9
 green0 = "#6fb593" # spring-green3
 selection0 = "#68f3ca" # aquamarine3
 selection1 = "#2e403b" # aquamarine6
-type = "#cd9575" # vermilion4
-hint = "#4d9391" # teal1
-info = "#80bcb6" # teal4
+type = "#ab8c4d" # vermilion4
+literal = "#7a9b67"
+hint = "#4d9391"
+keyword = "#ab8c4d"
+info = "#ab8c4d"
+muted_info = "#666666"
 warn = "#dbac66" # orange1
 error = "#cd5c60" # red1
-constant = "#ab98b5" # purple4
+constant = "#7d91b8"
 ultramarine4_dark = "#968cc7"
 violet7 = "#766884"
+variable = "#7d91b8"
+function = "#bf7f61"
 
