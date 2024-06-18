@@ -77,7 +77,7 @@ alias bat=batcat
 alias ls="ls --color=auto"
 alias l="ls -al"
 
-source $HOME/dotfiles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $HOME/packages/dotfiles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 [ ! -d $HOME/.zfunc ] && mkdir $HOME/.zfunc 
 [ ! -f $HOME/.zfunc/_rustup ] && rustup completions zsh > $HOME/.zfunc/_rustup 
