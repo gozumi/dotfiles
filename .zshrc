@@ -76,6 +76,9 @@ export HELIX_RUNTIME=$HOME/src/helix/runtime
 alias bat=batcat
 alias ls="ls --color=auto"
 alias l="ls -al"
+alias start-shell-container=$HOME/development/shell-container/start.sh
+alias stop-shell-container=$HOME/development/shell-container/stop.sh
+alias enter-shell-container=$HOME/development/shell-container/enter.sh
 
 source $HOME/packages/dotfiles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
