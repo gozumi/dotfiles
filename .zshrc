@@ -101,3 +101,17 @@ fi
 [ -d $HOME/.deno ] && [[ ":$FPATH:" != *":/home/developer/.zsh/completions:"* ]] && export FPATH="/home/developer/.zsh/completions:$FPATH"
 # Source the deno script
 [ -d $HOME/.deno ] && . "/home/developer/.deno/env"
+
+# pnpm
+export PNPM_HOME="/home/developer/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+if command -v pnpm 2>&1 >/dev/null
+  [ ! -d $HOME/.pnpm ] && mkdir $HOME/.pnpm
+  pnpm completion zsh > $HOME/.pnpm/completions
+  source $HOME/.pnpm/completions
+then
+fi
+# pnpm end
