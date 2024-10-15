@@ -87,8 +87,17 @@ source $HOME/packages/dotfiles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 [ ! -d $HOME/.zfunc ] && mkdir $HOME/.zfunc 
 [ ! -f $HOME/.zfunc/_rustup ] && rustup completions zsh > $HOME/.zfunc/_rustup 
 [ ! -f $HOME/.zfunc/_cargo ] && rustup completions zsh cargo > $HOME/.zfunc/_cargo
-[ ! -f $HOME/.zfunc/_podman ] && podman completion -f $HOME/.zfunc/_podman zsh
+if command -v podman 2>&1 >/dev/null 
+then 
+  [ ! -f $HOME/.zfunc/_podman ] && podman completion -f $HOME/.zfunc/_podman zsh
+fi
 
 [ -d $HOME/.nvm ] && export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add deno completions to search path
+# if [[ ":$FPATH:" != *":/home/developer/.zsh/completions:"* ]]; then export FPATH="/home/developer/.zsh/completions:$FPATH"; fi
+[ -d $HOME/.deno ] && [[ ":$FPATH:" != *":/home/developer/.zsh/completions:"* ]] && export FPATH="/home/developer/.zsh/completions:$FPATH"
+# Source the deno script
+[ -d $HOME/.deno ] && . "/home/developer/.deno/env"
