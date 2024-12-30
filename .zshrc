@@ -81,6 +81,7 @@ alias stop-shell-container=$HOME/development/shell-container/stop.sh
 alias enter-shell-container=$HOME/development/shell-container/enter.sh
 alias backup-remarkable=$HOME/packages/dotfiles/reMarkable/backup.sh
 alias restore-remarkable=$HOME/packages/dotfiles/reMarkable/restore.sh
+alias dockers="sudo docker"
 
 source $HOME/packages/dotfiles/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
